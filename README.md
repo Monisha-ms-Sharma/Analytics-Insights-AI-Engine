@@ -76,25 +76,29 @@ Predictive: Multi-algorithm time-series forecasting (Holt-Winters, seasonal, lin
 Prescriptive: Generates prioritized, evidence-backed recommendations tied directly to quantified data points, paired with interactive what-if simulation sliders.
 
 ## 4. Key Features & How to Use It
-Feature	Description	How to Use
-Multi-File & ZIP Ingestion: 
-Accepts single/bulk files or recursive ZIP archives (.csv, .tsv, .xlsx, .xls, .json, .geojson, .ndjson, .zip).	
-  Drag and drop files onto the upload zone, or click Load Sample Retail Data for immediate exploration.
-9-Tab Analysis Workspace:
-Dedicated screens for Overview, Descriptive, Diagnostic, Predictive, Prescriptive, Column Dictionary, Quality, Relationships, and Original Data.	
-  Click any tab header to switch perspectives without losing your analysis state.
-KPI & Date Targeting: 
-Dynamic focus selector that updates calculations across all diagnostic, predictive, and prescriptive modules.	
-  Use the top toolbar dropdowns to switch the target metric or primary date column.
-Interactive Visualizations:
-Responsive charts for trendlines, segment rankings, distributions, scatter plots, and forecast bands.	
-  Hover over data points to inspect exact values, standard errors, and confidence intervals.
-What-If Scenario Simulator: 
-Interactively adjust key driver inputs to simulate potential KPI outcomes.
-  Navigate to the Prescriptive tab, select a driver, and adjust the scenario slider.
-Executive PDF Export: 
-Generates an auditable, multi-page PDF report matching on-screen calculations.	
-  Click the Export PDF Report button in the header; downloads locally in seconds.
+A. Feature	Description: 
+Multi-File & ZIP Ingestion: Accepts single/bulk files or recursive ZIP archives (.csv, .tsv, .xlsx, .xls, .json, .geojson, .ndjson, .zip).	
+How to Use: Drag and drop files onto the upload zone, or click Load Sample Retail Data for immediate exploration.
+
+B. Feature	Description	
+9-Tab Analysis Workspace: Dedicated screens for Overview, Descriptive, Diagnostic, Predictive, Prescriptive, Column Dictionary, Quality, Relationships, and Original Data.	
+How to Use: Click any tab header to switch perspectives without losing your analysis state.
+
+C. Feature	Description	
+KPI & Date Targeting: Dynamic focus selector that updates calculations across all diagnostic, predictive, and prescriptive modules.	
+How to Use: Use the top toolbar dropdowns to switch the target metric or primary date column.
+
+D. Feature	Description	
+Interactive Visualizations: Responsive charts for trendlines, segment rankings, distributions, scatter plots, and forecast bands.	
+How to Use: Hover over data points to inspect exact values, standard errors, and confidence intervals.
+
+E. Feature	Description
+What-If Scenario Simulator: Interactively adjust key driver inputs to simulate potential KPI outcomes.
+How to Use: Navigate to the Prescriptive tab, select a driver, and adjust the scenario slider.
+
+F. Feature	Description
+Executive PDF Export: Generates an auditable, multi-page PDF report matching on-screen calculations.	
+How to Use: Click the Export PDF Report button in the header; downloads locally in seconds.
   
 ## 5. Who This Is For
 Business Owners & Operators: Make reliable, data-backed operational, pricing, and inventory decisions without needing a dedicated data analyst on staff.
