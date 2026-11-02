@@ -71,58 +71,53 @@ Analyzes shared column key overlap across multiple tables.
 Provides a safe Dimensional Enrichment (Lookup) engine that strictly enforces key uniqueness on lookup tables, rejecting non-unique keys to guarantee against row-multiplication errors.
 The Four Analytics Disciplines
 Descriptive: Automated time-grain aggregation (sum, mean, rate), trendlines, segment distributions, and Pareto concentrations.
-Diagnostic: Correlation matrices with p-values, driver importance ranking (
-R
-2
-R 
-2
- , Pearson 
-r
-r, 
-η
-2
-η 
-2
- ), top-vs-bottom quartile contrasts, and 
-z
-z-score anomaly detection.
+Diagnostic: Correlation matrices with p-values, driver importance ranking (R2, Pearson r, η2), top-vs-bottom quartile contrasts, and z-score anomaly detection.
 Predictive: Multi-algorithm time-series forecasting (Holt-Winters, seasonal, linear trend) validated against a 20% empirical holdout with Mean Absolute Percentage Error (MAPE) scores, plus regression and classification modeling with automated data-leakage guards.
 Prescriptive: Generates prioritized, evidence-backed recommendations tied directly to quantified data points, paired with interactive what-if simulation sliders.
+
 4. Key Features & How to Use It
 Feature	Description	How to Use
-Multi-File & ZIP Ingestion	Accepts single/bulk files or recursive ZIP archives (.csv, .tsv, .xlsx, .xls, .json, .geojson, .ndjson, .zip).	Drag and drop files onto the upload zone, or click Load Sample Retail Data for immediate exploration.
-9-Tab Analysis Workspace	Dedicated screens for Overview, Descriptive, Diagnostic, Predictive, Prescriptive, Column Dictionary, Quality, Relationships, and Original Data.	Click any tab header to switch perspectives without losing your analysis state.
-KPI & Date Targeting	Dynamic focus selector that updates calculations across all diagnostic, predictive, and prescriptive modules.	Use the top toolbar dropdowns to switch the target metric or primary date column.
-Interactive Visualizations	Responsive charts for trendlines, segment rankings, distributions, scatter plots, and forecast bands.	Hover over data points to inspect exact values, standard errors, and confidence intervals.
-What-If Scenario Simulator	Interactively adjust key driver inputs to simulate potential KPI outcomes.	Navigate to the Prescriptive tab, select a driver, and adjust the scenario slider.
-Executive PDF Export	Generates an auditable, multi-page PDF report matching on-screen calculations.	Click the Export PDF Report button in the header; downloads locally in seconds.
+Multi-File & ZIP Ingestion: 
+Accepts single/bulk files or recursive ZIP archives (.csv, .tsv, .xlsx, .xls, .json, .geojson, .ndjson, .zip).	
+  Drag and drop files onto the upload zone, or click Load Sample Retail Data for immediate exploration.
+9-Tab Analysis Workspace:
+Dedicated screens for Overview, Descriptive, Diagnostic, Predictive, Prescriptive, Column Dictionary, Quality, Relationships, and Original Data.	
+  Click any tab header to switch perspectives without losing your analysis state.
+KPI & Date Targeting: 
+Dynamic focus selector that updates calculations across all diagnostic, predictive, and prescriptive modules.	
+  Use the top toolbar dropdowns to switch the target metric or primary date column.
+Interactive Visualizations:
+Responsive charts for trendlines, segment rankings, distributions, scatter plots, and forecast bands.	
+  Hover over data points to inspect exact values, standard errors, and confidence intervals.
+What-If Scenario Simulator: 
+Interactively adjust key driver inputs to simulate potential KPI outcomes.
+  Navigate to the Prescriptive tab, select a driver, and adjust the scenario slider.
+Executive PDF Export: 
+Generates an auditable, multi-page PDF report matching on-screen calculations.	
+  Click the Export PDF Report button in the header; downloads locally in seconds.
+  
 5. Who This Is For
 Business Owners & Operators: Make reliable, data-backed operational, pricing, and inventory decisions without needing a dedicated data analyst on staff.
 Product & Marketing Managers: Rapidly audit campaign performance, user cohorts, and conversion drivers directly from raw CSV exports.
 Operations & Financial Analysts: Automate routine exploratory profiling, anomaly scans, and baseline forecasts.
 Consultants & Advisors: Ingest client data archives and produce executive-ready, defensible diagnostic reports in minutes.
 Non-Technical Professionals: Anyone with a spreadsheet who needs reliable business clarity rather than statistical jargon.
+
 6. How It Benefits Users
 Plain-English Explanations: Statistical metrics (p-values, skewness, variance) are translated into clear, actionable business takeaways.
 Strict Evidence Standard: Never invents unobserved revenue, costs, or facts. Hypotheses and predictions are explicitly labeled as such.
 Session Privacy by Design: 100% of parsing and model computation runs in a browser Web Worker. Data stays on your device and is not saved to external servers.
 Rapid Time-to-Insight: Replaces hours of manual spreadsheet formula debugging and charting with automated multi-dimensional analysis.
 Auditability: UI calculations, data dictionaries, and PDF exports consume the identical deterministic calculation pipeline.
+
 7. Limitations & Boundaries
 To maintain credibility and analytical rigor, the application operates under explicit boundaries:
-
-Correlation Is Not Causation: Driver analysis reveals mathematical associations (
-r
-r, 
-η
-2
-η 
-2
- ), not proven causal links. Real-world business causality requires controlled experimentation (A/B testing) or domain validation.
+Correlation Is Not Causation: Driver analysis reveals mathematical associations (r, η2), not proven causal links. Real-world business causality requires controlled experimentation (A/B testing) or domain validation.
 Browser Memory & Row Caps: Ingestion runs within client-side browser memory. Files with over 200,000 rows undergo systematic sampling to ensure performance without browser crashes (fully disclosed in the data quality audit).
 Historical Continuity Assumption: Forecasts assume historical patterns persist. Unexpected external shocks, regulatory shifts, or variables not present in the dataset cannot be anticipated.
 Structured Tabular Data Focus: Optimized for structured tables, spreadsheets, and nested JSON. Unstructured media (PDF documents, audio, raw images) or proprietary formats requiring heavy native binaries (e.g., Parquet without WebAssembly bindings) are bypassed.
 Session-Scoped Storage: By default, datasets exist only in the active browser tab session for privacy and are cleared on page reload unless exported to PDF.
+
 8. Upcoming Enhancements
 Visual Star-Schema Canvas: Interactive drag-and-drop entity-relationship canvas for connecting multiple fact and dimension tables.
 Wasm / DuckDB In-Browser Engine: WebAssembly-powered streaming execution allowing local multi-million-row querying and direct Parquet file ingestion.
