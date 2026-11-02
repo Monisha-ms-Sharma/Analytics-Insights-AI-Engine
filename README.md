@@ -1,5 +1,5 @@
 # Insights-and-Analytics-Engine
-https://pattern-to-action-engine.lovable.app/
+https://insights-analytics-engine.lovable.app
 
 # Insights & Analytics Engine
 
@@ -57,7 +57,7 @@ The application automatically ingests, profiles, and analyzes one or multiple da
                                                         | Auditable Report |
                                                         +------------------+
 
-3. What the Engine Is Capable Of
+## 3. What the Engine Is Capable Of
 Automated Data Profiling & Quality Auditing
 Zero-Configuration Type & Role Inference: Distinguishes continuous metrics, temporal dates, categorical dimensions, identifiers, and flags without manual configuration.
 Data Health Verification: Inspects missing-value rates, duplicate row counts, zero-variance columns, extreme outliers, and distribution skewness.
@@ -75,7 +75,7 @@ Diagnostic: Correlation matrices with p-values, driver importance ranking (R2, P
 Predictive: Multi-algorithm time-series forecasting (Holt-Winters, seasonal, linear trend) validated against a 20% empirical holdout with Mean Absolute Percentage Error (MAPE) scores, plus regression and classification modeling with automated data-leakage guards.
 Prescriptive: Generates prioritized, evidence-backed recommendations tied directly to quantified data points, paired with interactive what-if simulation sliders.
 
-4. Key Features & How to Use It
+## 4. Key Features & How to Use It
 Feature	Description	How to Use
 Multi-File & ZIP Ingestion: 
 Accepts single/bulk files or recursive ZIP archives (.csv, .tsv, .xlsx, .xls, .json, .geojson, .ndjson, .zip).	
@@ -96,21 +96,21 @@ Executive PDF Export:
 Generates an auditable, multi-page PDF report matching on-screen calculations.	
   Click the Export PDF Report button in the header; downloads locally in seconds.
   
-5. Who This Is For
+## 5. Who This Is For
 Business Owners & Operators: Make reliable, data-backed operational, pricing, and inventory decisions without needing a dedicated data analyst on staff.
 Product & Marketing Managers: Rapidly audit campaign performance, user cohorts, and conversion drivers directly from raw CSV exports.
 Operations & Financial Analysts: Automate routine exploratory profiling, anomaly scans, and baseline forecasts.
 Consultants & Advisors: Ingest client data archives and produce executive-ready, defensible diagnostic reports in minutes.
 Non-Technical Professionals: Anyone with a spreadsheet who needs reliable business clarity rather than statistical jargon.
 
-6. How It Benefits Users
+## 6. How It Benefits Users
 Plain-English Explanations: Statistical metrics (p-values, skewness, variance) are translated into clear, actionable business takeaways.
 Strict Evidence Standard: Never invents unobserved revenue, costs, or facts. Hypotheses and predictions are explicitly labeled as such.
 Session Privacy by Design: 100% of parsing and model computation runs in a browser Web Worker. Data stays on your device and is not saved to external servers.
 Rapid Time-to-Insight: Replaces hours of manual spreadsheet formula debugging and charting with automated multi-dimensional analysis.
 Auditability: UI calculations, data dictionaries, and PDF exports consume the identical deterministic calculation pipeline.
 
-7. Limitations & Boundaries
+## 7. Limitations & Boundaries
 To maintain credibility and analytical rigor, the application operates under explicit boundaries:
 Correlation Is Not Causation: Driver analysis reveals mathematical associations (r, η2), not proven causal links. Real-world business causality requires controlled experimentation (A/B testing) or domain validation.
 Browser Memory & Row Caps: Ingestion runs within client-side browser memory. Files with over 200,000 rows undergo systematic sampling to ensure performance without browser crashes (fully disclosed in the data quality audit).
@@ -118,7 +118,7 @@ Historical Continuity Assumption: Forecasts assume historical patterns persist. 
 Structured Tabular Data Focus: Optimized for structured tables, spreadsheets, and nested JSON. Unstructured media (PDF documents, audio, raw images) or proprietary formats requiring heavy native binaries (e.g., Parquet without WebAssembly bindings) are bypassed.
 Session-Scoped Storage: By default, datasets exist only in the active browser tab session for privacy and are cleared on page reload unless exported to PDF.
 
-8. Upcoming Enhancements
+## 8. Upcoming Enhancements
 Visual Star-Schema Canvas: Interactive drag-and-drop entity-relationship canvas for connecting multiple fact and dimension tables.
 Wasm / DuckDB In-Browser Engine: WebAssembly-powered streaming execution allowing local multi-million-row querying and direct Parquet file ingestion.
 Multivariate Sensitivity Matrices: Simultaneous multi-variable scenario simulation and target-seeking goal solvers.
