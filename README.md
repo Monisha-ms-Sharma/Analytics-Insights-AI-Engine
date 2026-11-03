@@ -57,23 +57,21 @@ The application automatically ingests, profiles, and analyzes one or multiple da
                                                         +------------------+
 
 ## 3. What the Engine Is Capable Of
-* **Automated Data Profiling & Quality Auditing**
+**Automated Data Profiling & Quality Auditing**
 * Zero-Configuration Type & Role Inference: Distinguishes continuous metrics, temporal dates, categorical dimensions, identifiers, and flags without manual configuration.
 * Data Health Verification: Inspects missing-value rates, duplicate row counts, zero-variance columns, extreme outliers, and distribution skewness.
 * Target & Date Candidate Detection: Automatically detects target KPIs (revenue, profit, churn, quantity) and primary time series anchors.
 * Transparent Column Dictionary: Explains every column’s business meaning in plain English.
 * Transparently distinguishes between supported facts and inferred interpretations.
 * Allows users to enter plain-English business clarifications to eliminate ambiguity before report generation.
-
-* **Multi-Table Relational Modeling**
+**Multi-Table Relational Modeling**
 Analyzes shared column key overlap across multiple tables.
 Provides a safe Dimensional Enrichment (Lookup) engine that strictly enforces key uniqueness on lookup tables, rejecting non-unique keys to guarantee against row-multiplication errors.
-
-* **The Four Analytics Disciplines**
-1. Descriptive: Automated time-grain aggregation (sum, mean, rate), trendlines, segment distributions, and Pareto concentrations.
-2. Diagnostic: Correlation matrices with p-values, driver importance ranking (R2, Pearson r, η2), top-vs-bottom quartile contrasts, and z-score anomaly detection.
-3. Predictive: Multi-algorithm time-series forecasting (Holt-Winters, seasonal, linear trend) validated against a 20% empirical holdout with Mean Absolute Percentage Error (MAPE) scores, plus regression and classification modeling with automated data-leakage guards.
-4. Prescriptive: Generates prioritized, evidence-backed recommendations tied directly to quantified data points, paired with interactive what-if simulation sliders.
+**The Four Analytics Disciplines**
+* Descriptive: Automated time-grain aggregation (sum, mean, rate), trendlines, segment distributions, and Pareto concentrations.
+* Diagnostic: Correlation matrices with p-values, driver importance ranking (R2, Pearson r, η2), top-vs-bottom quartile contrasts, and z-score anomaly detection.
+* Predictive: Multi-algorithm time-series forecasting (Holt-Winters, seasonal, linear trend) validated against a 20% empirical holdout with Mean Absolute Percentage Error (MAPE) scores, plus regression and classification modeling with automated data-leakage guards.
+* Prescriptive: Generates prioritized, evidence-backed recommendations tied directly to quantified data points, paired with interactive what-if simulation sliders.
 
 ## 4. Key Features & How to Use It
 * Feature: Multi-File & ZIP Ingestion: Accepts single/bulk files or recursive ZIP archives (.csv, .tsv, .xlsx, .xls, .json, .geojson, .ndjson, .zip).	
