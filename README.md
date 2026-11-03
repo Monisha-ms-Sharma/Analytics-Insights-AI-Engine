@@ -78,11 +78,11 @@ Provides a safe Dimensional Enrichment (Lookup) engine that strictly enforces ke
 ## 4. Key Features & How to Use It
 * Feature: Multi-File & ZIP Ingestion: Accepts single/bulk files or recursive ZIP archives (.csv, .tsv, .xlsx, .xls, .json, .geojson, .ndjson, .zip).	
   How to Use: Drag and drop files onto the upload zone or click Load Sample Retail Data for immediate exploration.
-* Feature:	9-Tab Analysis Workspace: Dedicated screens for Overview, Descriptive, Diagnostic, Predictive, Prescriptive, Column Dictionary, Quality, Relationships, and Original Data.	
+* Feature: 9-Tab Analysis Workspace: Dedicated screens for Overview, Descriptive, Diagnostic, Predictive, Prescriptive, Column Dictionary, Quality, Relationships, and Original Data.	
   How to Use: Click any tab header to switch perspectives without losing your analysis state.
-* Feature:	KPI & Date Targeting: Dynamic focus selector that updates calculations across all diagnostic, predictive, and prescriptive modules.	
+* Feature: KPI & Date Targeting: Dynamic focus selector that updates calculations across all diagnostic, predictive, and prescriptive modules.	
   How to Use: Use the top toolbar dropdowns to switch the target metric or primary date column.
-* Feature:	Interactive Visualizations: Responsive charts for trendlines, segment rankings, distributions, scatter plots, and forecast bands.	
+* Feature: Interactive Visualizations: Responsive charts for trendlines, segment rankings, distributions, scatter plots, and forecast bands.	
   How to Use: Hover over data points to inspect exact values, standard errors, and confidence intervals.
 * Feature: What-If Scenario Simulator: Interactively adjust key driver inputs to simulate potential KPI outcomes.
   How to Use: Navigate to the Prescriptive tab, select a driver, and adjust the scenario slider.
