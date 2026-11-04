@@ -1,6 +1,6 @@
 # Insights & Analytics Engine
-
 **Evidence-based business intelligence from your own data, written in plain English.**
+https://insights-analytics-engine.lovable.app/
 
 ---
 
