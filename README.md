@@ -1,117 +1,158 @@
-# Insights-and-Analytics-Engine
-https://insights-analytics-engine.lovable.app
-
 # Insights & Analytics Engine
 
-> **Data-Derived, Reliable Business Intelligence & Modeling**  
-> Automated, client-side exploratory data analysis, diagnostic profiling, predictive modeling, and prescriptive decision simulation for one or multiple datasets.
+**Evidence-based business intelligence from your own data, written in plain English.**
 
 ---
 
 ## 1. Why This Application Was Built
 
-Modern decision-makers face a persistent dilemma when attempting to make sense of their data:
+Most organizations have plenty of data but struggle to turn it into reliable decisions:
 
-* **Complex Legacy Tools:** Traditional Business Intelligence (BI), statistical platforms, and data science notebooks require specialized knowledge of SQL, Python, R, schema normalization, and advanced statistical theory. Non-technical leaders, operators, and domain experts are frequently locked out or bottlenecked waiting for data engineering teams.
-* **Generative AI Risks:** Generic Large Language Model (LLM) prompts often suffer from calculation hallucinations, invent imaginary financial returns or costs, and conflate statistical correlation with real-world causation.
-* **Data Privacy Concerns:** Uploading proprietary, confidential spreadsheets or operational databases to cloud-based analytics providers exposes sensitive customer, operational, and financial records.
-**Insights & Analytics Engine** bridges this divide. It provides an automated, evidence-backed, client-side data analytics platform that guides users from raw files to defensible business decisions—without requiring a technical or analytical background.
+- **Traditional analytics tools are complex.** They often need technical skills, coding, or a dedicated analyst.
+- **Generic AI tools can make things up.** They may produce confident answers that the data does not support.
+- **Privacy matters.** Many people do not want to upload sensitive business files to outside servers.
+
+Insights & Analytics Engine was built to fix this. Anyone, with or without an analytics background, can upload their data and get trustworthy insights about business events and outcomes. Every insight is calculated directly from the uploaded data.
 
 ---
 
 ## 2. What This Application Does
 
-The application automatically ingests, profiles, and analyzes one or multiple datasets, translating raw numbers into an end-to-end analytical framework covering the four classical pillars of data analytics:
+The app automatically models and analyzes one or more uploaded datasets. It then explains:
+
+- **What happened**
+- **Why it may have happened**
+- **What could happen next**
+- **What actions to consider**
 
 ```text
-+--------------------------------------------------------------------------+
-|                       INSIGHTS & ANALYTICS ENGINE                        |
-+--------------------------------------------------------------------------+
-|  [ Ingest ] CSV, TSV, Excel (.xlsx/.xls), JSON, GeoJSON, NDJSON, ZIP     |
-+--------------------------------------------------------------------------+
-|  [ Worker ] Client-Side Web Worker (Isolated parsing & computation)      |
-+--------------------------------------------------------------------------+
-                                     |
-         +---------------------------+---------------------------+
-         |                           |                           |
-         v                           v                           v
-+-------------------+       +-------------------+       +------------------+
-|    Descriptive    |       |    Diagnostic     |       |    Predictive    |
-| "What happened?"  |  ==>  | "Why did it occur"|  ==>  | "What comes next"|
-| Trends, Segments, |       | Drivers, Quartiles|       | Forecasts, MAPE, |
-|   Aggregations    |       |   Correlations    |       | Leakage-Checked  |
-+-------------------+       +-------------------+       +------------------+
-                                                                 |
-                                                                 v
-                                                        +------------------+
-                                                        |   Prescriptive   |
-                                                        | "What to do now" |
-                                                        | Prioritized Recs |
-                                                        | What-if Scenario |
-                                                        +------------------+
-                                                                 |
-                                                                 v
-                                                        +------------------+
-                                                        |  Executive PDF   |
-                                                        | Auditable Report |
-                                                        +------------------+
+Upload files (CSV, Excel, JSON, ZIP, ...)
+        |
+        v
+Parse & preserve originals  -->  Profile columns & data quality
+        |
+        v
+Detect relationships across tables  -->  Optional lookup enrichment
+        |
+        v
++-----------------------------------------------------------+
+|  Core analysis                                            |
+|  Descriptive | Diagnostic | Predictive | Prescriptive     |
++-----------------------------------------------------------+
+|  Additional analysis                                      |
+|  Inferential | Causal | Mechanistic |                     |
+|  Quantitative + Qualitative | Text & Sentiment            |
++-----------------------------------------------------------+
+        |
+        v
+Interactive charts  |  Ask your data (AI)  |  Guided walkthrough
+        |
+        v
+Downloadable PDF report
+```
 
-## 3. What the Engine Is Capable Of
-A. Automated Data Profiling & Quality Auditing
-* Zero-Configuration Type & Role Inference: Distinguishes continuous metrics, temporal dates, categorical dimensions, identifiers, and flags without manual configuration.
-* Data Health Verification: Inspects missing-value rates, duplicate row counts, zero-variance columns, extreme outliers, and distribution skewness.
-* Target & Date Candidate Detection: Automatically detects target KPIs (revenue, profit, churn, quantity) and primary time series anchors.
-* Transparent Column Dictionary: Explains every column’s business meaning in plain English.
-* Transparently distinguishes between supported facts and inferred interpretations.
-* Allows users to enter plain-English business clarifications to eliminate ambiguity before report generation.
-B. Multi-Table Relational Modeling
-Analyzes shared column key overlap across multiple tables.
-Provides a safe Dimensional Enrichment (Lookup) engine that strictly enforces key uniqueness on lookup tables, rejecting non-unique keys to guarantee against row-multiplication errors.
-C. The Four Analytics Disciplines
-* Descriptive: Automated time-grain aggregation (sum, mean, rate), trendlines, segment distributions, and Pareto concentrations.
-* Diagnostic: Correlation matrices with p-values, driver importance ranking (R2, Pearson r, η2), top-vs-bottom quartile contrasts, and z-score anomaly detection.
-* Predictive: Multi-algorithm time-series forecasting (Holt-Winters, seasonal, linear trend) validated against a 20% empirical holdout with Mean Absolute Percentage Error (MAPE) scores, plus regression and classification modeling with automated data-leakage guards.
-* Prescriptive: Generates prioritized, evidence-backed recommendations tied directly to quantified data points, paired with interactive what-if simulation sliders.
+---
 
-## 4. Key Features & How to Use It
-* Feature: Multi-File & ZIP Ingestion: Accepts single/bulk files or recursive ZIP archives (.csv, .tsv, .xlsx, .xls, .json, .geojson, .ndjson, .zip).	
-  How to Use: Drag and drop files onto the upload zone or click Load Sample Retail Data for immediate exploration.
-* Feature: 9-Tab Analysis Workspace: Dedicated screens for Overview, Descriptive, Diagnostic, Predictive, Prescriptive, Column Dictionary, Quality, Relationships, and Original Data.	
-  How to Use: Click any tab header to switch perspectives without losing your analysis state.
-* Feature: KPI & Date Targeting: Dynamic focus selector that updates calculations across all diagnostic, predictive, and prescriptive modules.	
-  How to Use: Use the top toolbar dropdowns to switch the target metric or primary date column.
-* Feature: Interactive Visualizations: Responsive charts for trendlines, segment rankings, distributions, scatter plots, and forecast bands.	
-  How to Use: Hover over data points to inspect exact values, standard errors, and confidence intervals.
-* Feature: What-If Scenario Simulator: Interactively adjust key driver inputs to simulate potential KPI outcomes.
-  How to Use: Navigate to the Prescriptive tab, select a driver, and adjust the scenario slider.
-* Feature: Executive PDF Export: Generates an auditable, multi-page PDF report matching on-screen calculations.	
-  How to Use: Click the Export PDF Report button in the header; downloads locally in seconds.
-  
+## 3. What This Application Is Capable Of
+
+### Data ingestion
+- Single or multiple files in industry-standard formats: **CSV, TSV, Excel (XLSX/XLS), JSON, GeoJSON**
+- **ZIP folders**, including nested folders and dimensional (lookup) tables
+- Large files: up to 200,000 rows per table are analyzed. Larger tables are sampled systematically, and the app tells you when it does this.
+- Original data is never changed
+
+### Data understanding
+- Automatic column profiling: type, role, statistics, and meaning in plain English
+- A column dictionary that labels each meaning as *supported by the data* or *inferred*, with space to add your own explanation
+- Relationship detection between tables, plus safe lookup enrichment. Joins that would duplicate rows are refused.
+
+### Core analysis
+| # | Type | Question it answers | What it includes |
+|---|------|---------------------|------------------|
+| 1 | **Descriptive** | What happened? | Mean, median, mode, percentages, KPIs, trends, segments, distributions, dashboards |
+| 2 | **Diagnostic** | Why did it happen? | Correlations with significance, key drivers, high vs. low comparisons, contribution analysis, anomaly detection |
+| 3 | **Predictive** | What is likely next? | Time-series forecasting (naive, linear, Holt, seasonal) with holdout validation; regression and classification models; leakage protection |
+| 4 | **Prescriptive** | What should we do? | Prioritized, evidence-backed recommendations; interactive what-if scenario simulator |
+
+### Additional analysis
+| # | Type | What it does |
+|---|------|--------------|
+| 5 | **Inferential** | Confidence intervals, t-tests, chi-square tests, and correlation significance, with correction for multiple tests |
+| 6 | **Causal** | Compares experiment groups when the data has them (e.g. treatment vs. control). Otherwise gives regression-adjusted effects and clearly states the limits of observational data |
+| 7 | **Mechanistic** | Finds exact arithmetic relationships (e.g. revenue = price × units), contribution shares, and elasticities |
+| 8 | **Quantitative + Qualitative** | Combines numeric outcomes with categories: each group's share of records vs. its share of the outcome |
+| 9 | **Text & Sentiment** | Finds themes, top terms, phrases, and positive/negative/neutral sentiment in free-text columns, plus how outcomes differ by sentiment, with example quotes |
+
+---
+
+## 4. Key Features and How to Use Them
+
+| Feature | What it does | How to use it |
+|---------|--------------|---------------|
+| **Upload area** | Accepts files and ZIP folders by drag-and-drop | Drop files in, or click **Try sample data** |
+| **Overview** | Headline metrics, charts, and ranked findings | Opens automatically after upload |
+| **Guided walkthrough** | Step-by-step tour from data quality through descriptive, diagnostic, predictive, and prescriptive analysis, using your live results | Open **Guided walkthrough** and press **Next** |
+| **Ask your data** | Ask questions in plain English. AI explains the relevant findings with supporting figures and caveats | Type a question or pick a suggested one |
+| **Analysis controls** | Choose the outcome to study, the time field, and filters | Use the selectors at the top of the workspace |
+| **Analysis tabs** | One tab for each of the nine analysis types | Click any tab in the sidebar |
+| **Scenario simulator** | Tests "what if" changes to key factors | Predictive tab → adjust a factor |
+| **Column dictionary** | Plain-English meaning of every column | Search, expand, and add clarifications |
+| **Data quality dashboard** | Summary of issues rated **High / Medium / Low**, with recommended next steps | Open **Data quality** |
+| **Relationships** | Shows how tables connect; combines lookup tables safely | Open **Relationships** |
+| **Original data** | View your untouched data, page by page | Open **Original data** |
+| **PDF report** | Formatted, downloadable report covering every section | Click **Download report** |
+
+---
+
 ## 5. Who This Is For
-* Business Owners & Operators: Make reliable, data-backed operational, pricing, and inventory decisions if you are without a dedicated data analyst on staff.
-* Product & Marketing Managers: Rapidly audit campaign performance, user cohorts, and conversion drivers directly from raw CSV exports.
-* Operations & Financial Analysts: Automate routine exploratory profiling, anomaly scans, and baseline forecasts.
-* Consultants & Advisors: Ingest client data archives and produce executive-ready, defensible diagnostic reports in minutes.
-* Non-Technical Professionals: Anyone with a spreadsheet who needs reliable business clarity rather than statistical jargon.
+
+- Business owners and managers
+- Product, marketing, sales, and operations teams
+- Finance and strategy professionals
+- Consultants and analysts who want a fast, reliable first pass
+- Researchers, educators, and students
+- **Anyone who needs answers from data without coding**
+
+The app works across industries, including retail, finance, healthcare, SaaS, logistics, and manufacturing.
+
+---
 
 ## 6. How It Benefits Users
-* Plain-English Explanations: Statistical metrics (p-values, skewness, variance) are translated into clear, actionable business takeaways.
-* Strict Evidence Standard: Never invents unobserved revenue, costs, or facts. Hypotheses and predictions are explicitly labeled as such.
-* Session Privacy by Design: 100% of parsing and model computation runs in a browser Web Worker. Data stays on your device and is not saved to external servers.
-* Rapid Time-to-Insight: Replaces hours of manual spreadsheet formula debugging and charting with automated multi-dimensional analysis.
-* Auditability: UI calculations, data dictionaries, and PDF exports consume the identical deterministic calculation pipeline.
 
-## 7. Limitations & Boundaries
-To maintain credibility and analytical rigor, the application operates under explicit boundaries:
-* Correlation Is Not Causation: Driver analysis reveals mathematical associations (r, η2), not proven causal links. Real-world business causality requires controlled experimentation (A/B testing) or domain validation.
-* Browser Memory & Row Caps: Ingestion runs within client-side browser memory. Files with over 200,000 rows undergo systematic sampling to ensure performance without browser crashes (fully disclosed in the data quality audit).
-* Historical Continuity Assumption: Forecasts assume historical patterns persist. Unexpected external shocks, regulatory shifts, or variables not present in the dataset cannot be anticipated.
-* Structured Tabular Data Focus: Optimized for structured tables, spreadsheets, and nested JSON. Unstructured media (PDF documents, audio, raw images) or proprietary formats requiring heavy native binaries (e.g., Parquet without WebAssembly bindings) are bypassed.
-* Session-Scoped Storage: By default, datasets exist only in the active browser tab session for privacy and are cleared on page reload unless exported to PDF.
+- **Plain English:** results are explained without jargon.
+- **Reliable:** every finding is calculated from your data. Facts, relationships, hypotheses, predictions, and recommendations are labeled separately.
+- **Honest:** correlation is never presented as causation, and financial gains or costs are never invented.
+- **Private:** files are processed in your browser and are not saved anywhere. The AI assistant only receives calculated summaries, never your raw rows.
+- **Fast:** analysis runs in the background, so the screen stays responsive.
+- **Consistent:** the screen and the PDF report use the same calculations, so the figures always match.
+- **Transparent:** sampling, data changes, assumptions, and uncertainty are always disclosed.
+
+---
+
+## 7. Limitations
+
+- **Correlation is not causation.** Proving cause and effect needs experiment data (e.g. treatment vs. control). Other causal results are estimates only.
+- **Browser memory.** Very large files are sampled above 200,000 rows per table. Performance depends on your device.
+- **Forecasts need history.** Reliable forecasts need enough regular time periods. Short or patchy history gives wider uncertainty.
+- **Structured data focus.** Text analysis uses a word-list sentiment method, not a deep language model. Images, audio, PDFs, and Parquet files are not analyzed.
+- **Session only.** Data and results disappear when you close the page. There are no saved projects yet.
+- **AI assistant.** Answers depend on the calculated summaries and can still be wrong. Always check them against the figures shown. The assistant needs an internet connection.
+- **Statistical methods are approximations** suited to business decision support, not regulated scientific studies.
+
+---
 
 ## 8. Upcoming Enhancements
-* Visual Star-Schema Canvas: Interactive drag-and-drop entity-relationship canvas for connecting multiple fact and dimension tables.
-* Wasm / DuckDB In-Browser Engine: WebAssembly-powered streaming execution allowing local multi-million-row querying and direct Parquet file ingestion.
-* Multivariate Sensitivity Matrices: Simultaneous multi-variable scenario simulation and target-seeking goal solvers.
-* Data Drift & Period Comparison: Side-by-side comparison of historical datasets to track pipeline changes and metric migration over time.
-* Optional Collaborative Workspaces: Secure, opt-in cloud project synchronization and scheduled team report distributions.
+
+1. **Visual data model canvas:** drag-and-drop star-schema builder for multi-table data
+2. **Faster engine for very large files:** in-browser database technology to remove the row limit
+3. **Advanced optimization:** goal-seeking and constraint-based recommendations
+4. **Multi-factor sensitivity analysis:** test several factors in one scenario
+5. **Deeper text analysis:** AI-powered themes, topics, and sentiment
+6. **Data drift monitoring:** compare new uploads with earlier ones and flag changes
+7. **Saved workspaces and sharing:** optional accounts to save, revisit, and work on analyses together
+8. **Custom report builder:** choose which sections, charts, and branding go into the PDF
+9. **More formats:** Parquet, SQL database connections, and cloud storage imports
+
+---
+
+*Insights & Analytics Engine: from raw data to reliable, evidence-backed decisions.*
