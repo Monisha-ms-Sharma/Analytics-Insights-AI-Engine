@@ -182,30 +182,4 @@ The app works across industries, including retail, finance, healthcare, SaaS, lo
 
 *Insights & Analytics Engine: from raw data to reliable, evidence-backed decisions.*
 
-## 7. Limitations
-
-- **Correlation is not causation.** Proving cause and effect needs experiment data (e.g. treatment vs. control). Other causal results are estimates only.
-- **Browser memory.** Very large files are sampled above 200,000 rows per table. Performance depends on your device.
-- **Forecasts need history.** Reliable forecasts need enough regular time periods. Short or patchy history gives wider uncertainty.
-- **Structured data focus.** Text analysis uses a word-list sentiment method, not a deep language model. Images, audio, PDFs, and Parquet files are not analyzed.
-- **Session only.** Data and results disappear when you close the page. There are no saved projects yet.
-- **AI assistant.** Answers depend on the calculated summaries and can still be wrong. Always check them against the figures shown. The assistant needs an internet connection.
-- **Statistical methods are approximations** suited to business decision support, not regulated scientific studies.
-
 ---
-
-## 8. Upcoming Enhancements
-
-1. **Visual data model canvas:** drag-and-drop star-schema builder for multi-table data
-2. **Faster engine for very large files:** in-browser database technology to remove the row limit
-3. **Advanced optimization:** goal-seeking and constraint-based recommendations
-4. **Multi-factor sensitivity analysis:** test several factors in one scenario
-5. **Deeper text analysis:** AI-powered themes, topics, and sentiment
-6. **Data drift monitoring:** compare new uploads with earlier ones and flag changes
-7. **Saved workspaces and sharing:** optional accounts to save, revisit, and work on analyses together
-8. **Custom report builder:** choose which sections, charts, and branding go into the PDF
-9. **More formats:** Parquet, SQL database connections, and cloud storage imports
-
----
-
-*Insights & Analytics Engine: from raw data to reliable, evidence-backed decisions.*
