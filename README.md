@@ -149,9 +149,9 @@ Custom PDF report  |  Saved workspaces  |  Shareable results (no data rows)
 | --- | --- | --- |
 | Early Access | Free | 3 full analyses per signed-in person, including reports and Ask your data |
 | Single Data File Analysis | $100 one-time | One full analysis + report for one file |
-| Full Data Set Analysis | $200 one-time | One full analysis + report for multiple files |
+| Full Data Set Analysis | $250 one-time | One full analysis + report for multiple files |
 | Monthly | $50 / month | Unlimited analyses + Ask your data |
-| Yearly | $250 / year | Unlimited analyses + Ask your data |
+| Yearly | $500 / year | Unlimited analyses + Ask your data |
 
 Overview, Guided walkthrough, Descriptive, Data quality, Column dictionary, Relationships and Original data are free on every dataset. Payments are handled by Paddle as merchant of record. Cancelled subscriptions keep access until the period ends; plan changes are prorated. See the Terms, Refund (30-day money-back) and Privacy pages in the app.
 
