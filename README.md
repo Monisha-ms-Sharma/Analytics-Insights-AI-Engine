@@ -1,7 +1,7 @@
-# Analytics & Insights – AI Engine
+# Analytics & Insights – Engine
 Evidence-based business intelligence from your own data, written in plain English.
 
-**Live Application:** [https://analytics-insights-engine.lovable.app/](https://analytics-insights-engine.lovable.app/)
+**Live Application:** https://ai-engine.app/
 
 ---
 
