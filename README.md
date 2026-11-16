@@ -1,7 +1,8 @@
-# Analytics & Insights – Engine
+# Analytics & Insights - Engine
 Evidence-based business intelligence from your own data, written in plain English.
+**Live Application:** https://ai-engine.app/  
 
-**Live Application:** https://ai-engine.app/
+<img width="1920" height="973" alt="Analytics   Insights - AI Engine" src="https://github.com/user-attachments/assets/96522dbb-d8c8-4d3d-8fc8-e855d8a53a77" />
 
 ---
 
@@ -13,7 +14,7 @@ Most organizations have plenty of data but struggle to turn it into reliable dec
 * **Generic AI tools can hallucinate:** They may present plausible-sounding assertions that the underlying numbers do not substantiate.
 * **Data privacy is non-negotiable:** Organizations cannot risk uploading confidential business files to external third-party servers.
 
-**Analytics & Insights – AI Engine** solves this. Anyone—with or without a data science background—can drop in data and immediately receive trustworthy, evidence-backed insights. Every calculation runs locally inside the browser, and every finding is derived deterministically from the uploaded data.
+**Analytics & Insights - Engine** solves this. Anyone—with or without a data science background—can drop in data and immediately receive trustworthy, evidence-backed insights. Every calculation runs locally inside the browser Web Worker, and every finding is derived deterministically from the uploaded data.
 
 ---
 
@@ -60,9 +61,10 @@ The application automatically parses, profiles, models, and analyzes single or m
 │ └────────────────────────────────────────────────────────────────────────────────────┘ │
 │ ┌────────────────────────────────────────────────────────────────────────────────────┐ │
 │ │ ADVANCED STATISTICAL & CAUSAL LENSES                                               │ │
-│ │ • Inferential (Hypothesis Testing)       • Causal (Treatment Effects, Confounders) │ │
+│ │ • Time Series (Calendar Trends, Holdout) • Inferential (Hypothesis Testing)        │ │
+│ │ • Survival Analysis (Kaplan–Meier, RMST) • Causal (Treatment Effects, Confounders) │ │
 │ │ • Mechanistic (Path & Mediator Analysis) • Quant + Qual (Group Disproportions)     │ │
-│ │ • Text & Sentiment (TF-IDF & Polarities)                                           │ │
+│ │ • Text & Sentiment (Trained In-Browser RoBERTa Transformer & Polarities)           │ │
 │ └────────────────────────────────────────────────────────────────────────────────────┘ │
 │ ┌────────────────────────────────────────────────────────────────────────────────────┐ │
 │ │ MACHINE LEARNING SUITE                                                             │ │
@@ -78,23 +80,26 @@ The application automatically parses, profiles, models, and analyzes single or m
 │  • Executive Overview & KPIs             • Ask Your Data (Privacy-Preserving AI)       │
 │  • Step-by-Step Guided Walkthrough       • Zero-Row Shared Results (.json)             │
 │  • Interactive Scenario Simulators       • Custom Executive PDF Report Builder         │
-│  • Local Browser Workspaces (IndexedDB)                                                │
+│  • Local Browser Workspaces (IndexedDB)  • White-Label Customized Results              │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+---
+
 ## 3. What This Application Is Capable Of
 
 ### Supported File Types
 
 | Category | Supported Formats | Processing Method |
 | :--- | :--- | :--- |
-| **Delimited Text** | CSV, TSV, TXT, PSV, DAT, TAB | Chunked streaming & reservoir sampling for large files |
+| **Delimited Text** | CSV, TSV, TXT, PSV, DAT, TAB | Chunked progressive streaming; zero sampling |
 | **Spreadsheets** | Excel (`.xlsx`, `.xls`, `.xlsm`, `.xlsb`), OpenDocument (`.ods`) | In-browser parsing; preserves all sheets |
 | **Columnar & Big Data** | Parquet, Apache Arrow, Feather | Range-based reads without loading entire file |
 | **Semi-Structured** | JSON, JSONL, NDJSON, GeoJSON, XML | Hierarchical flattening and type discovery |
 | **Documents** | Microsoft Word (`.docx`), PDF tables | Extracts structured tables; isolates prose |
 | **Databases** | Raw `.sql` dumps, SQLite databases | Sandboxed in-browser SQLite WebAssembly engine |
-| **Compressed Archives**| ZIP (nested directories), GZIP (`.gz`) | Unpacks and mounts tables in memory |
-| **Cloud Storage Links**| Google Drive, OneDrive, Dropbox, SharePoint | Direct stream to browser memory; zero cloud retention |
+| **Compressed Archives** | ZIP (nested directories), GZIP (`.gz`) | Unpacks and mounts tables in memory |
+| **Cloud Storage Links** | Google Drive, OneDrive, Dropbox, SharePoint | Direct stream to browser memory; zero cloud retention |
 
 * Upload a single file or multiple related tables simultaneously.
 * **Original data is never modified:** Transformations and joins create separate derived tables.
@@ -104,7 +109,7 @@ The application automatically parses, profiles, models, and analyzes single or m
 ### Large & Big Data Handling
 
 * **Streaming Engine:** CSV and text files over 50 MB are parsed in progressive chunks; Parquet files are read in block ranges to protect client memory.
-* **Adaptive Sampling:** Datasets are processed in full up to a deterministic cell budget (~40 million cells). Beyond that threshold, a representative sample covering the entire distribution is used, with transparent UI disclosure.
+* **Full-Dataset Guarantee (Zero Sampling):** Datasets are processed in full up to an 80-million-cell capacity. If a dataset exceeds memory or capacity thresholds, it is safely rejected with transparent row/cell counts and splitting guidance—it is never sampled.
 * **Responsive Background Execution:** Computations run in a dedicated Web Worker so the browser interface remains fluid.
 
 ---
@@ -112,8 +117,9 @@ The application automatically parses, profiles, models, and analyzes single or m
 ### Data Understanding & Governance
 
 * **Automatic Column Profiling:** Identifies column types, semantic roles, cardinality, null counts, and business meanings.
-* **Interactive Column Dictionary:** Classifies definitions as data-supported or inferred, with editable notes.
+* **Interactive Column Dictionary:** Classifies definitions as data-supported or inferred, with editable notes and user-defined formulas.
 * **27 Sector KPI Packages:** Detects domain contexts (Healthcare, Finance, SaaS, Retail, Logistics, Aviation, Cybersecurity, Engineering, Manufacturing, and more) and computes industry-standard ratios only when verified columns exist.
+* **14 Selectable Synthetic Sample Datasets:** Ready-to-explore multi-table sample models across major industry domains.
 
 ---
 
@@ -140,11 +146,13 @@ The application automatically parses, profiles, models, and analyzes single or m
 
 | # | Lens | Scope & Methods |
 | :-: | :--- | :--- |
-| **5** | **Inferential** | Two-sample t-tests, Mann-Whitney U, Chi-Square independence, multiple testing adjustments (Benjamini-Hochberg). |
-| **6** | **Causal** | Propensity score matching, Average Treatment Effect (ATE), confounding controls, and observational limit disclosures. |
-| **7** | **Mechanistic** | Structural equation modeling, path coefficient decomposition, mediator effects, and formulaic dependencies. |
-| **8** | **Quant + Qual** | Share of voice vs. share of impact, categorical volume vs. outcome contribution matrices. |
-| **9** | **Text & Sentiment** | N-gram tokenization, TF-IDF term scoring, polarity classification, and sentiment outcome correlations. |
+| **5** | **Time Series** | Calendar aggregation, linear direction, trailing averages, detrended autocorrelation, and seasonal holdout evaluation. |
+| **6** | **Inferential** | Two-sample t-tests, Mann-Whitney U, Chi-Square independence, multiple testing adjustments (Benjamini-Hochberg). |
+| **7** | **Survival Analysis** | Full-record Kaplan–Meier curves, right censoring, Greenwood intervals, median survival, RMST, and log-rank tests. |
+| **8** | **Causal** | Propensity score matching, Average Treatment Effect (ATE), confounding controls, and observational limit disclosures. |
+| **9** | **Mechanistic** | Structural equation modeling, path coefficient decomposition, mediator effects, and formulaic dependencies. |
+| **10** | **Quant + Qual** | Share of voice vs. share of impact, categorical volume vs. outcome contribution matrices. |
+| **11** | **Text & Sentiment** | In-browser quantized RoBERTa transformer, polarity classification, TF-IDF top terms, and sentiment outcome correlations. |
 
 ---
 
@@ -170,13 +178,14 @@ The application automatically parses, profiles, models, and analyzes single or m
 | **Auto Generated Models** | Pre-computed, row-preserving multi-table combinations | Data Analysis → Auto Generated Data Models |
 | **Ask Your Data** | Natural-language query assistant backed by verified statistics | Data Analysis → Ask Your Data |
 | **Scenario Simulator** | Interactive slider-based what-if forecasting | Data Analysis → Predictive / Prescriptive |
-| **Column Dictionary** | Field definitions, roles, and custom notes | DIY Tools → Column Dictionary |
-| **Data Quality Audit** | Issue severity audit (High / Medium / Low) with remediations | DIY Tools → Data Quality |
-| **Original Data Grid** | Filterable, paginated inspector for raw ingested data | DIY Tools → Original Data |
-| **Data Transformation** | 18 cleaning, reshaping, and engineering operations | DIY Tools → Data Transformation |
-| **Data Model Studio** | Visual canvas and menu builder for star-schema joins | DIY Tools → Data Model |
+| **DIY Columns** | Custom user-defined formulas and column derivations | DIY Tools → DIY Columns |
+| **DIY Transformations** | 18 cleaning, reshaping, and feature engineering operations | DIY Tools → DIY Transformations |
+| **DIY Data Models** | Visual canvas and menu builder for star-schema joins | DIY Tools → DIY Data Models |
+| **DIY Comparisons** | Compare completed profiles and metrics across uploads | DIY Tools → DIY Comparisons |
+| **DIY Bookmarks** | Save and recall specific charts and insights locally | DIY Tools → DIY Bookmarks |
+| **DIY Saved Workspaces** | Preserves files, models, and definitions locally in IndexedDB | DIY Tools → DIY Saved Workspaces |
+| **Customize Results** | Organization white-labeling, custom branding, and sources | Workspace top bar → Customize Results |
 | **PDF Report Builder** | Customizable executive reporting with chart selection | Top action bar → *Download report* |
-| **Saved Workspaces** | Preserves files, models, and notes locally in IndexedDB | Top action bar → *Save workspace* |
 | **Share Results** | Exports zero-row summary package (`.json`) for team review | Top action bar → *Share results* |
 | **Workspace Reset** | Clears active workspace and returns cleanly to upload screen | Top of sidebar → *Reset* |
 
@@ -186,14 +195,15 @@ The application automatically parses, profiles, models, and analyzes single or m
 
 | Tier | Price | Scope & Entitlements |
 | :--- | :--- | :--- |
-| **Early Access** | **Free** | **3 full dataset analyses** per signed-in user (unlocks all 14 lenses, ML, PDF reports, and Ask Your Data). |
-| **Single Data File Analysis** | **$100** one-time | Unlocks full analysis and PDF reporting for a single uploaded table. |
-| **Full Data Set Analysis** | **$250** one-time | Unlocks full analysis and PDF reporting for multi-table datasets and star models. |
-| **Monthly Subscription** | **$50 / month** | Unlimited analyses, unlimited PDF reports, full ML suite, and Ask Your Data. |
-| **Yearly Subscription** | **$500 / year** | Unlimited annual access (save $100 vs. monthly) with all features included. |
+| **Early Access** | **Free** | **3 full dataset analyses** per signed-in user or device (unlocks all 14 lenses, ML, PDF reports, and DIY tools). |
+| **Single Data File Analysis** | **$99.99** one-time | Unlocks full analysis and PDF reporting for a single uploaded table. |
+| **Full Data Set Analysis** | **$199.99** one-time | Unlocks full analysis and PDF reporting for multi-table datasets and star models. |
+| **Monthly Subscription** | **$99.99 / month** | Unlimited analyses, unlimited PDF reports, full ML suite, and Ask Your Data / AI Insights. |
+| **Yearly Subscription** | **$999.99 / year** | Unlimited annual access (save ~$199.89 vs. monthly) with all features included. |
 
-* **Always Free:** Overview, Guided Walkthrough, Descriptive Analytics, Auto Generated Models, Data Quality, Column Dictionary, Data Transformation, and Data Model builder require no payment.
-* **Merchant of Record:** Transactions are processed securely by Paddle. Subscriptions can be self-managed or canceled anytime via the customer billing portal.
+* **Free Notice:** Free analyses are limited to one account per user or device. Ask Your Data & Generate AI Insights require a paid subscription.
+* **Always Free:** Overview, Guided Walkthrough, Descriptive Analytics, Data Quality, Column Dictionary, and synthetic sample explorations require no payment.
+* **Merchant of Record:** Transactions are processed securely by Paddle. Customers may request a full refund within 14 days of the order date for monthly/yearly subscriptions and one-time purchases.
 
 ---
 
@@ -212,8 +222,9 @@ The application automatically parses, profiles, models, and analyzes single or m
 * **Plain English First:** Complex mathematical findings are translated into clear, actionable executive summaries.
 * **Deterministic Reliability:** Visualizations, statistical tables, and exported PDF reports consume identical worker outputs.
 * **Uncompromising Privacy:** Files remain inside your browser sandbox. The AI assistant receives only aggregate summaries, never raw data rows.
-* **Speed & Interactivity:** Background multi-threading keeps charts, filtering, and model generation instant and responsive.
+* **Speed & Interactivity:** Background Web Worker execution keeps charts, filtering, and model generation instant and responsive.
 * **Scientific Integrity:** The engine explicitly separates correlation from causation and never fabricates financial projections.
+* **Zero Sampling:** Full datasets are computed directly up to capacity; data is never thinned out or approximated.
 
 ---
 
@@ -221,14 +232,9 @@ The application automatically parses, profiles, models, and analyzes single or m
 
 * **Causal Observational Limits:** Establishing true causality requires experimental randomized control data; observational causal findings represent statistical estimations.
 * **Browser Memory Boundaries:** Non-streaming formats (Excel, JSON, XML, SQLite) load in browser memory; practical limits reflect device RAM.
-* **Sampling Disclosures:** Tables exceeding the cell budget are sampled using reproducible stratified techniques; figures will reflect the sample.
+* **Capacity Limits:** Tables exceeding 80 million cells are rejected with split guidance, never sampled.
 * **Time-Series Horizon:** Predictive models require historical depth; short series produce wider confidence intervals.
 * **Local Workspaces:** Stored in your local browser’s IndexedDB; workspaces do not sync across distinct physical devices unless exported via *Share Results*.
+* **Clinical Data Notice:** Local execution alone is not HIPAA compliance or a Business Associate Agreement; survival and clinical insights are not medical advice.
 
 ---
-
-## 9. Contact & Support
-
-* **Publisher:** Monisha Sharma, AI Engine, USA
-* **Application URL:** [https://analytics-insights-engine.lovable.app/](https://analytics-insights-engine.lovable.app/)
-* **Early Access Program:** [https://analytics-insights-engine.lovable.app/early-access](https://analytics-insights-engine.lovable.app/early-access)
